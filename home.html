@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finals Project</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome</h1>
+        <nav>
+            <ul>
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="index.html">Logout</a>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero" id="hero-section">
+  <img id="bg-img" src="https://4kwallpapers.com/images/walls/thumbs_3t/358.jpg" class="active">
+
+  <div class="overlay">
+    <p id="location">MOON</p>
+    <h1 id="title">MOON EXPEDITION</h1>
+    <p id="description">Explore the moon with our exclusive expedition...</p>
+    
+    <a href="moon.html" id="explore-btn" class="btn">Explore</a>
+  </div>
+
+  <div class="thumbnails">
+    <img src="https://4kwallpapers.com/images/walls/thumbs_3t/358.jpg" onclick="changeSlide(0)">
+    <img src="https://cdn.britannica.com/92/118692-050-194A0468/Neil-Armstrong-Apollo-11-Michael-Collins-Edwin.jpg" onclick="changeSlide(1)">
+    <img src="https://cdn.theatlantic.com/media/img/photo/2019/11/apollo-12-photos-50-years-ago/a01_S6938852b-1/original.jpg" onclick="changeSlide(2)">
+    <img src="https://people.com/thmb/tvizpXrqAjoA1LLLGFsi2DIDS9o=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(749x0:751x2)/apollo-13-090424-3-25b16916ac4946bb966efa9041bb2543.jpg" onclick="changeSlide(3)">
+    <img src="https://en.dialektika.org/wp-content/uploads/2022/08/Artemis_1_First_Rollout_KSC-20220318-PH-KLS03_0091.jpeg" onclick="changeSlide(4)">
+    <img src="https://cdn.theatlantic.com/thumbor/LWHQiLUhRXlRAHTaoU4butUWxkg=/0x0:4800x2700/960x540/media/img/mt/2023/04/artemis_II/original.jpg" onclick="changeSlide(5)">
+  </div>
+</section>
+<script>
+const slideData = [
+    {
+        bg: "https://4kwallpapers.com/images/walls/thumbs_3t/358.jpg",
+        loc: "MOON",
+        title: "MOON EXPEDITION",
+        desc: "Explore the moon with our exclusive expedition...",
+        link: "moon.html"
+    },
+    {
+        bg: "https://cdn.britannica.com/92/118692-050-194A0468/Neil-Armstrong-Apollo-11-Michael-Collins-Edwin.jpg",
+        loc: "APOLLO 11",
+        title: "THE FIRST EXPEDITION",
+        desc: "The historic Apollo 11 mission that changed history.",
+        link: "apollo11.html"
+    },
+    {
+        bg: "https://cdn.theatlantic.com/media/img/photo/2019/11/apollo-12-photos-50-years-ago/a01_S6938852b-1/original.jpg",
+        loc: "APOLLO 12",
+        title: "THE SECOND EXPEDITION",
+        desc: "Precision landing on the lunar surface.",
+        link: "apollo12.html"
+    },
+    {
+        bg: "https://people.com/thmb/tvizpXrqAjoA1LLLGFsi2DIDS9o=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(749x0:751x2)/apollo-13-090424-3-25b16916ac4946bb966efa9041bb2543.jpg",
+        loc: "APOLLO 13",
+        title: "SUCCESSFUL FAILURE",
+        desc: "A mission of survival and resilience.",
+        link: "apollo13.html"
+    },
+    {
+        bg: "https://en.dialektika.org/wp-content/uploads/2022/08/Artemis_1_First_Rollout_KSC-20220318-PH-KLS03_0091.jpeg",
+        loc: "ARTEMIS I",
+        title: "RETURN TO THE MOON",
+        desc: "Uncrewed flight test beyond the moon.",
+        link: "artemis1.html"
+    },
+    {
+        bg: "https://cdn.theatlantic.com/thumbor/LWHQiLUhRXlRAHTaoU4butUWxkg=/0x0:4800x2700/960x540/media/img/mt/2023/04/artemis_II/original.jpg",
+        loc: "ARTEMIS II",
+        title: "CREWED ORBIT",
+        desc: "The next generation of lunar explorers.",
+        link: "artemis2.html"
+    }
+];
+
+function changeSlide(index) {
+    
+    const bg = document.getElementById("bg-img");
+    const loc = document.getElementById("location");
+    const title = document.getElementById("title");
+    const desc = document.getElementById("description");
+    const btn = document.getElementById("explore-btn");
+
+    const data = slideData[index];
+
+ 
+    bg.style.opacity = 0; 
+    
+    setTimeout(() => {
+        bg.src = data.bg;
+        loc.innerText = data.loc;
+        title.innerText = data.title;
+        desc.innerText = data.desc;
+        btn.href = data.link;
+        bg.style.opacity = 1; 
+    }, 300);
+}
+</script>
+</body>
+</html>
